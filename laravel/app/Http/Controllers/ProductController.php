@@ -8,13 +8,13 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all();
-        return view('product.index', ['product' => $products]);
+        $product = Product::all();
+        return view('products.index', ['products' => $product]);
         
     }
 
     public function create(){
-        return view('product.create');
+        return view('products.create');
     }
 
     public function store(Request $request){
@@ -32,7 +32,7 @@ class ProductController extends Controller
     }
 
     public function edit(Product $product){
-        return view('product.edit', ['product' => $product]);
+        return view('products.edit', ['product' => $product]);
     }
 
     public function update(Product $product, Request $request){
